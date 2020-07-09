@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 require('dotenv/config');
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogpost",
+mongoose.connect(toString(process.env.DB_CONNECTION),
 {useNewUrlParser: true, useUnifiedTopology: true},
     ()=>{
     console.log('yes we are connected now');
