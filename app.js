@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 const postRoute = require('./routes/post');
+const bodyParser = require('body-parser');
 
 
-
-app.use('/post',postRoute);
+app.use(bodyParser.json());
+app.use('/',postRoute);
 
 
 const port = process.env.PORT || 5000;
